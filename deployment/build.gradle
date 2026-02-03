@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Estas son las librerías del núcleo de CDK
+    implementation 'software.amazon.awscdk:aws-cdk-lib:2.110.0'
+    implementation 'software.constructs:constructs:10.3.0'
+
+    // Librerías para pruebas
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+}
+
+application {
+    // Esta es la clase principal que creó el comando cdk init
+    mainClass = 'com.myorg.DeploymentApp'
+}
+
+test {
+    useJUnitPlatform()
+}
